@@ -20,10 +20,6 @@ import javax.persistence.*
 
 @Entity
 data class ExampleEntity(
-        @Id
-        @GeneratedValue(strategy = GenerationType.AUTO)
-        val id: Int,
-
         @Column
         val name: String,
 
@@ -32,5 +28,5 @@ data class ExampleEntity(
 
         @ManyToOne
         val parent: ExampleEntity? = null
-) {
+) : ExampleBaseEntity<Int>() {
 }
